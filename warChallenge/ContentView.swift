@@ -10,11 +10,11 @@ import SwiftUI
 struct ContentView: View {
     var playerName = "Octavian"
 
-    @State var playerCard: String = "card2"
-    @State var computerCard: String = "card12"
+    @State private var playerCard: String = "card2"
+    @State private var computerCard: String = "card12"
 
-    @State var playerScore = 0
-    @State var computerScore = 0
+    @State private var playerScore = 0
+    @State private var computerScore = 0
     
     func playHand() {
         let cardPrefix: String = "card"
