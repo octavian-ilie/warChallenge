@@ -18,9 +18,8 @@ struct ContentView: View {
     
     func playHand() {
         let cardPrefix: String = "card"
-        
         var regenerateCards: Bool = true
-        
+
         var randomPlayerCard: Int
         var randomComputerCard: Int
         
@@ -29,9 +28,17 @@ struct ContentView: View {
             randomPlayerCard = Int.random(in: 2...14)
             randomComputerCard = Int.random(in: 2...14)
             
+            // If cards are different, display them and update score for the winner
             if randomPlayerCard != randomComputerCard {
                 playerCard = cardPrefix + String(randomPlayerCard)
                 computerCard = cardPrefix + String(randomComputerCard)
+                
+                if randomPlayerCard > randomComputerCard {
+                    playerScore += 1
+                } else if randomPlayerCard < randomComputerCard {
+                    computerScore += 1
+                }
+                
                 regenerateCards = false
             } else {
                 regenerateCards = true
