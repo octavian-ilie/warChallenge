@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    var playerName = "Octavian"
+    @State var playerName = "Octavian"
 
     @State private var playerCard: String = "card2"
     @State private var computerCard: String = "card12"
@@ -67,7 +67,12 @@ struct ContentView: View {
                 Button(action: {
                     playHand()
                 }, label: {
-                    Image("dealbutton")
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 16, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/)
+                            .fill(Color.white)
+                            .frame(width: 120, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        Image("dealbutton")
+                    }
                 })
                 Spacer()
                 HStack {
