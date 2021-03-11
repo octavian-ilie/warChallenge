@@ -65,7 +65,9 @@ struct ContentView: View {
                 }
                 Spacer()
                 Button(action: {
+                    let impactMedium = UIImpactFeedbackGenerator(style: .medium)
                     playHand()
+                    impactMedium.impactOccurred()
                 }, label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 16, style: /*@START_MENU_TOKEN@*/.continuous/*@END_MENU_TOKEN@*/)
